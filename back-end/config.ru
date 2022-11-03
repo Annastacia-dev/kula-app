@@ -7,6 +7,6 @@ use Rack::Cors do
         end
     end
 
-use Rack::PostBodyContentTypeParser
+use Rack::JSONBodyParser
 
 run ApplicationController
