@@ -1,8 +1,8 @@
 class ReservationController < Sinatra::Base 
 
-    # Reservation Routes
-
     set :default_content_type, 'application/json'
+
+    # Reservation Routes
 
     get '/reservations' do
         reservations = Reservation.all

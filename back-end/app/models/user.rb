@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
     has_many :reservations
     has_many :restaurants, through: :reservations
 
-    validates_presence_of :name, :email, :password
+    validates_presence_of :name, :email, :password_digest
 end

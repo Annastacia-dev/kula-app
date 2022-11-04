@@ -1,7 +1,18 @@
+:root{
+    --strawberry: #fc5a8d;
+}
+
+
 .signup{
    display: grid;
+   height: 100vh;
    grid-template-columns: repeat(2, 1fr);
-   margin-top: 10px;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: #fff;
+   animation: slide 20s infinite;
+   
 }
 
 .content{
@@ -10,13 +21,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 140px;
 }
 
 .signup h1{
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 600;
-    color: #fc5a8d;
+    color: var(--strawberry);
     font-family: 'Varela Round', sans-serif;
+    margin-right: 20px;
 }
 
 .signup form{
@@ -32,21 +45,28 @@
     width: 280px;
     height: 50px;
     padding: 0 5px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
     background: none;
     outline: none;
     border: none;
-    border-bottom:2px solid #000;
+    border-bottom:2px solid #fff;
     margin-left: 170px;
-    
+    color: #fff;
+   
 }
+
+.signup form input::placeholder{
+    color: #fff;
+}
+
 
  button{
     width: 300px;
     height: 40px;
     border: none;
     border-radius: 5px;
-    background-color: #000;
+    background-color: var(--strawberry);
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -62,9 +82,9 @@
 }
 
 .sign-up.button p{
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 5px;
-    margin-left: 120px;    
+    margin-left: 100px;    
 }
 .media-links{
     display: flex;
@@ -76,7 +96,7 @@
 
 .signup form a{
     text-decoration: none;
-    color: #fc5a8d;
+    color: var(--strawberry);
     font-weight: 600;
 }
 
@@ -97,6 +117,53 @@
     font-size: 12px;
     margin-left: 170px;
     display: none;
+}
+
+.white-box{
+   background-color: #000;
+   opacity: 0.8;
+
+}
+
+@keyframes slide {
+    0%{
+        background-image: url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+    20%{
+        background-image: url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    20.01%{
+        background-image: url(https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    40%{
+        background-image: url(https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    40.01%{
+        background-image: url(https://images.unsplash.com/photo-1571805618149-3a772570ebcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    60%{
+        background-image: url(https://images.unsplash.com/photo-1571805618149-3a772570ebcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    60.01%{
+        background-image: url(https://images.unsplash.com/photo-1557955776-857434f1c951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    80%{
+        background-image: url(https://images.unsplash.com/photo-1557955776-857434f1c951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    }
+
+    80.01%{
+        background-image: url(https://images.unsplash.com/photo-1522336572468-97b06e8ef143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
+    }
+
+    100%{
+        background-image: url(https://images.unsplash.com/photo-1522336572468-97b06e8ef143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
+    }
 }
 
 

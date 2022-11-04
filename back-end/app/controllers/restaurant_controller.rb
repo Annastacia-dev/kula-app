@@ -1,10 +1,10 @@
 class RestaurantController < Sinatra::Base 
 
-    # Restaurant Routes
-
     set :default_content_type, 'application/json'
 
-    get '/restaurants' do
+     # Restaurant Routes
+
+     get '/restaurants' do
         restaurants = Restaurant.all
         restaurants.to_json
     end
@@ -47,5 +47,6 @@ class RestaurantController < Sinatra::Base
         restaurant.destroy
         restaurant.to_json
     end
+
 
 end

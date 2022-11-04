@@ -1,8 +1,7 @@
-class UserController < Sinatra::Base
-
-    # User Routes
-
+class UserController < Sinatra::Base 
     set :default_content_type, 'application/json'
+    
+    # User Routes
 
     get '/users' do
         users = User.all
@@ -15,12 +14,16 @@ class UserController < Sinatra::Base
     end
 
     post '/users' do
-        user = User.create(
-            name: params[:name],
-            email: params[:email],
-            password_digest: params[:password_digest]
-        )
-        user.to_json
+        if User.find_by(email: params[:email])
+            {message: "Email already exists"}.to_json
+        else
+            user = User.create(
+                name: params[:name],
+                email: params[:email],
+                password_digest: params[:password_digest]
+            )
+            user.to_json
+        end
     end
 
     put '/users/:id' do
@@ -38,4 +41,6 @@ class UserController < Sinatra::Base
         user.destroy
         user.to_json
     end
+
+
 end

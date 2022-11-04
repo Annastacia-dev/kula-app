@@ -1,7 +1,4 @@
-$:.unshift '.'
 require_relative './config/environment'
-
-use Rack::Static, :urls => ['/css'], :root => 'public'
 
 use Rack::Cors do
     allow do
