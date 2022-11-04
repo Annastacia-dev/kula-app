@@ -1,6 +1,7 @@
 import React,{ useState} from 'react'
 import '../css/signup.css'
 import { Link } from 'react-router-dom';
+import logo from './logo.png'
 
 const SignUp = () => {
 
@@ -34,6 +35,7 @@ const SignUp = () => {
     <div className="signup">
     <div className="white-box">
         <div className='content'>
+        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"20px"}} />
             <h1> Welcome To Kula</h1>
             <form>
                 <div className="info">

@@ -1,0 +1,55 @@
+nav{
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 70px;
+    width: 100%;
+    position:fixed;
+    z-index: 20;
+    color: black;
+      
+}
+
+.logo{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;  
+    text-decoration: none;  
+    color: var(--strawberry);
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'Varela Round', sans-serif;
+   
+}
+.logo:hover{
+    color: #fff;
+}
+
+nav ul {
+    float: right;
+    margin-right: 100px;
+   
+}
+
+nav ul li {
+    display: inline-block;   
+    line-height: 60px;
+    margin: 0 5px;
+    
+}
+nav ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 7px 20px;
+    border-radius: 3px;
+    color: var(--strawberry); 
+    text-decoration: none;  
+}
+nav ul li a:hover{
+    color: #fff;
+    transition: 1s;
+}
+
+
+
+
+    

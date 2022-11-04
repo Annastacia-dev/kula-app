@@ -1,8 +1,19 @@
 import React from 'react'
+import RestaurantCard from './RestaurantCard'
+import '../css/restaurants.css'
 
-const Restaurants = () => {
+const Restaurants = ( { restaurants }) => {
+  
   return (
-    <div>Restaurants</div>
+    <>
+      <div className="restaurants">
+    {
+      restaurants.map(restaurant => (
+        <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+      ))
+    }
+    </div>
+    </>
   )
 }
 

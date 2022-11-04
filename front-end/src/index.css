@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:root{
+  --strawberry: #fc5a8d;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   max-width: 1330px;
