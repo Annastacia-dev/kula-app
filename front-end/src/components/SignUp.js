@@ -1,10 +1,10 @@
-import React,{ useState} from 'react'
+import React,{useState} from 'react'
 import '../css/signup.css'
 import { Link } from 'react-router-dom';
 import logo from './logo.png'
 
 const SignUp = () => {
-
+  
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
