@@ -3,8 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 import Restaurants from './Restaurants';
+import Restaurant from './Restaurant';
 import PublicHomePage from './PublicHomePage';
-import Footer from './Footer';
+
 
 
 const App = () => {
@@ -34,13 +35,14 @@ const App = () => {
               <Route path="/" element={<PublicHomePage />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
+              <Route path="/restaurant/:id" element={<Restaurant/>} />
             </>
           )
 
         }
       </Routes>
 
-      <Footer />
+    
     
     </>
   )
