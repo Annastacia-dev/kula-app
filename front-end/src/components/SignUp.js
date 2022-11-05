@@ -35,7 +35,7 @@ const SignUp = () => {
     <div className="signup">
     <div className="white-box">
         <div className='content'>
-        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"20px"}} />
+        <img src={logo} alt="" style={{"width": "10%", "marginBottom": "-50px"}} />
             <h1> Welcome To Kula</h1>
             <form>
                 <div className="info">
