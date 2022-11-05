@@ -8,6 +8,9 @@
 
 :root{
   --strawberry: #fc5a8d;
+  --darkstrawberry: #690424;
+  --poppins: 'Poppins', sans-serif;
+  --varela: 'Varela Round', sans-serif;
 }
 
 body {

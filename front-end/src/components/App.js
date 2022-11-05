@@ -4,7 +4,6 @@ import SignUp from './SignUp';
 import LogIn from './LogIn';
 import Restaurants from './Restaurants';
 import PublicHomePage from './PublicHomePage';
-import NavBar from './NavBar';
 import Footer from './Footer';
 
 
@@ -21,8 +20,6 @@ const App = () => {
 
   return (
     <>
-
-    <NavBar />
       <Routes>
 
         {

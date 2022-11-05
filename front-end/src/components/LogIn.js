@@ -44,7 +44,7 @@ const LogIn = () => {
     <div className="signup">
         <div className='white-box'>
         <div className='content'>
-        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"40px"}} />
+        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"-30px"}} />
             <h1> Welcome To Kula</h1>
             <form>
                 <div className="info">

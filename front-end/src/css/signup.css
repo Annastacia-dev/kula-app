@@ -1,6 +1,3 @@
-
-
-
 .signup{
    display: grid;
    height: 100vh;
@@ -19,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .signup h1{

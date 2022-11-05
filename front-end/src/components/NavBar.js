@@ -9,12 +9,10 @@ const NavBar = () => {
     <div>
       <nav>
      
-      <NavLink className='logo' end to='/whoweare'>Kula.</NavLink>
+      <NavLink className='logo' end to='/'>Kula.</NavLink>
           
         <div className="navbar">
           <ul>
-          
-            
             <li>
                 <NavLink end to='/whoweare'>Who We Are</NavLink>
             </li>
@@ -29,7 +27,7 @@ const NavBar = () => {
                 <NavLink end to='/signup'>Sign Up</NavLink>
             </li>
             <li>
-                <NavLink end to='/signup'>Log In</NavLink>
+                <NavLink end to='/login'>Log In</NavLink>
             </li>
           </ul>
         </div>
