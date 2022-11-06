@@ -11,7 +11,7 @@ import PublicHomePage from './PublicHomePage';
 const App = () => {
 
   const [restaurants, setRestaurants] = useState([]);
-  const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
     fetch('http://localhost:4000/restaurants')
@@ -22,28 +22,12 @@ const App = () => {
   return (
     <>
       <Routes>
-
-        {
-          user ? (
-            <>
-              <Route path="/" element={<Restaurants restaurants={restaurants} />} />
-              <Route path="/home" element={<Restaurants restaurants={restaurants} />} />
-            </>
-          ) : (
-            
-            <>
-              <Route path="/" element={<PublicHomePage />} />
+            <Route path="/" element={<PublicHomePage restaurants={ restaurants} />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
               <Route path="/restaurant/:id" element={<Restaurant/>} />
-            </>
-          )
-
-        }
+              <Route path="/restaurant" element={<Restaurants restaurants={restaurants} />} /> 
       </Routes>
-
-    
-    
     </>
   )
 }

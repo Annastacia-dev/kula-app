@@ -1,13 +1,14 @@
-import React,{useState} from 'react'
+import React,{ useContext } from 'react'
 import '../css/signup.css'
 import { Link } from 'react-router-dom';
 import logo from './logo.png'
+import { NameContext, EmailContext, PasswordContext } from '../context/user';
 
 const SignUp = () => {
-  
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
+  const [name, setName] = useContext(NameContext);
+  const [email, setEmail] = useContext(EmailContext);
+  const [password, setPassword] = useContext(PasswordContext);
 
   // Post name, email, and password to the server, located at http://localhost:4000/users
   // Then clear the form
@@ -27,7 +28,7 @@ const SignUp = () => {
     })
     .then(res => res.json())
       console.log("Sign");
-      window.location.href = '/home';
+      window.location.href = '/restaurant';
   }
 
   return (
@@ -35,7 +36,7 @@ const SignUp = () => {
     <div className="signup">
     <div className="white-box">
         <div className='content'>
-        <img src={logo} alt="" style={{"width": "10%", "marginBottom": "-50px"}} />
+        <img src={logo} alt="" style={{"width": "10%", "marginBottom": "-100px"}} />
             <h1> Welcome To Kula</h1>
             <form>
                 <div className="info">

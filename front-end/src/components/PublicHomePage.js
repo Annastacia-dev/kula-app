@@ -4,19 +4,22 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import '../css/publichomepage.css'
 
-const PublicHomePage = () => {
+const PublicHomePage = ( { restaurants} ) => {
   const [topRestaurants, setTopRestaurants] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
-    const getTopRestaurants = async () => {
-      const response = await fetch('http://localhost:4000/top_rated')
-      const data = await response.json()
-      setTopRestaurants(data.slice(0, 6))
-    }
-    getTopRestaurants()
-  }, [])
+    setTopRestaurants(restaurants.slice(0, 6))
+  }, [restaurants])
 
-  console.log(topRestaurants)
+  const handleSearchChange = (e) => {
+    e.preventDefault()
+    setSearch(e.target.value)
+  }
+
+  const filteredRestaurants = topRestaurants.filter((restaurant) => {
+    return restaurant.name.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <>
@@ -27,7 +30,12 @@ const PublicHomePage = () => {
             <h1>Discover the best restaurants, cafés, and bars in your area</h1>
             <div className='page'>
               <div className='search-bar'>
-                <input type="text" placeholder="Search for restaurants " />
+                <input 
+                type="text" 
+                placeholder="Search for top restaurants "
+                value={search}
+                onChange={handleSearchChange}
+                 />
                 <i className="fa-solid fa-magnifying-glass"></i>
                
               </div>
@@ -38,9 +46,9 @@ const PublicHomePage = () => {
               </p>
               <div className="top-restaurants">
               {
-                    topRestaurants.map((restaurant) => {
+                    filteredRestaurants.map((restaurant) => {
                       return (
-                        <Link key={restaurant.id} to={`/restaurant/${restaurant.id}`}>
+                        <Link key={restaurant.id} to='/login'>
                          
                         <div className='card'>
                           <img src={restaurant.image_url} alt={restaurant.name} />
