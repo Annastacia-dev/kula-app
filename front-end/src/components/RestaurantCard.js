@@ -1,16 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import '../css/restaurantcard.css'
 
 const RestaurantCard = ( { restaurant }) => {
-
-  console.log(restaurant)
   return (
-    <>
-      <Link key={restaurant.id} to='/login'>
-                         
-        <div className='card'>
+    <>                  
+        <div className='card-restaurant'>
             <img src={restaurant.image_url} alt={restaurant.name} />
-                <div className='card-content'>
+                <div className='card-content-restaurant'>
                    <h2>{restaurant.name}</h2>
                     <div className="name-cuisine">
                         <p><i className="fa-solid fa-location-crosshairs"></i>{restaurant.location}</p>
@@ -18,7 +14,7 @@ const RestaurantCard = ( { restaurant }) => {
                     </div>
                 </div>
         </div>
-      </Link>
+      
     </>
   )
 }

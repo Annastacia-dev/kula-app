@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    height: 100vh;
+}
+
+.card.restaurant-item{
+    border-radius: 0px;
+    box-shadow: none;
+    margin-top: -100px;
+    background: transparent;
+    width: 100%;
+    margin-left: -5px;
+    margin-bottom: 0px;
+   
+}
+
+.card.restaurant-item:hover{
+    transform: none;
+    transition: none;
+    background-color: transparent;
+}
+
+.card.restaurant-item img{
+   height: 400px;
+   position: relative;
+   top: -10px;
+   opacity: 0.4;
+   width: 100%;
+}
+
+.card.restaurant-item .restaurant-card-content{
+    position: absolute;
+}
+
+.card.restaurant-item .restaurant-card-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: 100px;
+}
+
+.restaurant-item-content{
+    background-color: #fff;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.item-name-cuisine{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.item-name-cuisine p{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: 30px;
+}
+
+.item-name-cuisine p i{
+   padding-right: 20px;
+}

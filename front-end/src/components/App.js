@@ -14,7 +14,7 @@ const App = () => {
   
 
   useEffect(() => {
-    fetch('http://localhost:4000/restaurants')
+    fetch('http://localhost:9292/restaurants')
       .then(res => res.json())
       .then(restaurants => setRestaurants(restaurants));
   }, []);
@@ -25,8 +25,8 @@ const App = () => {
             <Route path="/" element={<PublicHomePage restaurants={ restaurants} />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
-              <Route path="/restaurant/:id" element={<Restaurant/>} />
-              <Route path="/restaurant" element={<Restaurants restaurants={restaurants} />} /> 
+              <Route path="/restaurants/:id" element={<Restaurant restaurants={ restaurants}/>} />
+              <Route path="/restaurants" element={<Restaurants restaurants={restaurants} />} /> 
       </Routes>
     </>
   )
