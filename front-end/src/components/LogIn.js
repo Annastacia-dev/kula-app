@@ -1,11 +1,13 @@
-import React, { useState} from 'react'
+import React, { useContext} from 'react'
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
+import { EmailContext, PasswordContext } from '../context/user';
+
 
 const LogIn = () => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');    
+    const [email, setEmail] = useContext(EmailContext);
+    const [password, setPassword] = useContext(PasswordContext);   
 
     const handleEmailChange = (e) => {
         fetch ('http://localhost:4000/users', {
@@ -36,7 +38,7 @@ const LogIn = () => {
         handleEmailChange()
         handlePasswordChange()
         console.log("Log in");
-        window.location.href = '/home';
+        window.location.href = '/restaurant';
     }
 
   return (
@@ -44,7 +46,7 @@ const LogIn = () => {
     <div className="signup">
         <div className='white-box'>
         <div className='content'>
-        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"-30px"}} />
+        <img src={logo} alt="" style={{"width": "10%", "marginBottom":"-70px"}} />
             <h1> Welcome To Kula</h1>
             <form>
                 <div className="info">

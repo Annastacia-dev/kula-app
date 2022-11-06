@@ -23,11 +23,11 @@ const NavBar = () => {
             <li>
                 <NavLink end to='/contactus'>Contact Us</NavLink>
             </li>
-            <li>
-                <NavLink end to='/signup'>Sign Up</NavLink>
+            <li >
+                <NavLink end to='/signup' className='nav-button'>Sign Up</NavLink>
             </li>
             <li>
-                <NavLink end to='/login'>Log In</NavLink>
+                <NavLink end to='/login' className='nav-button'>Log In</NavLink>
             </li>
           </ul>
         </div>
