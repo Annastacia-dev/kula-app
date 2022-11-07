@@ -27,7 +27,6 @@ const Restaurant = ( { restaurants }) => {
             <div className='restaurant-item-reviews'>
               <div className='review-buttons'>
                 <button
-                onClick={AddReview}
                 >
                   {/* Review */}
                   <i className="fa-solid fa-star"></i>
