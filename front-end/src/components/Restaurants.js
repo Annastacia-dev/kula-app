@@ -17,22 +17,32 @@ const Restaurants = ( { restaurants }) => {
 
   // Filter restaurants by selected location
 
-  const handleLocationChange = (e) => {
-    e.preventDefault()
-    setLocation(e.target.value)
-  }
+  // const handleLocationChange = (e) => {
+  //   e.preventDefault()
+  //   const location = e.target.value
+  //   const filteredRestaurantsByLocation = restaurants.filter(
+  //     restaurant => restaurant.location === location
+  //   )
+  //   setLocation(filteredRestaurantsByLocation)
+  // }
 
   // Filter restaurants by selected cuisine
 
-  const handleCuisineChange = (e) => {
-    e.preventDefault()
-    setCuisine(e.target.value)
-  }
+  // Filter restaurants by search input, location, and cuisine
 
-  const filteredRestaurants = restaurants.filter(restaurant => {
+  const filteredRestaurants1 = restaurants.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(search.toLowerCase())
   })
-  
+
+  const filteredRestaurants2 = filteredRestaurants1.filter(restaurant => {
+    return restaurant.location.toLowerCase().includes(location.toLowerCase())
+  })
+
+  const filteredRestaurants = filteredRestaurants2.filter(restaurant => {
+    return restaurant.cuisine.toLowerCase().includes(cuisine.toLowerCase())
+  })
+
+
   return (
     <>
       {/* <NavBar /> */}
@@ -51,12 +61,11 @@ const Restaurants = ( { restaurants }) => {
                 {/* Dropdown to filter restaurants by location, cuisine */}
 
                 <div className='filter'>
-
                 <select 
                 name="location" 
                 id="location"
                 value={location}
-                onChange={handleLocationChange}
+                onChange={e => setLocation(e.target.value)}
                 >
                     <option defaultValue="location" >Location</option>
                     <option value="kilimani">Kilimani</option>
@@ -73,9 +82,10 @@ const Restaurants = ( { restaurants }) => {
                 name="cuisine" 
                 id="cuisine"
                 value={cuisine}
-                onChange={handleCuisineChange}
+                onChange={e => setCuisine(e.target.value)}
                 >
                     <option defaultValue="cuisine" >Cuisine</option>
+                    <option value="american">All</option>
                     <option value="american">American</option>
                     <option value="asian">Asian</option>
                     <option value="mexican">Mexican</option>

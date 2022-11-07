@@ -19,12 +19,6 @@ class RestaurantController < Sinatra::Base
             
     end
 
-    get '/top_rated' do
-        restaurants = Restaurant.top_rated
-        restaurants.to_json
-        
-    end
-
     post '/restaurants' do
         restaurant = Restaurant.create(
             name: params[:name],
