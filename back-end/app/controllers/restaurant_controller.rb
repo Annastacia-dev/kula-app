@@ -6,16 +6,16 @@ class RestaurantController < Sinatra::Base
 
      get '/restaurants' do
         restaurants = Restaurant.all
-        restaurants.to_json
-    end
-
-    get '/restaurants/:id' do
-        restaurant = Restaurant.find(params[:id])
-        restaurant.to_json(
+        restaurants.to_json(
             :include => {
                 :reviews => {:only => [:id, :content, :rating]}
             },
         )
+    end
+
+    get '/restaurants/:id' do
+        restaurant = Restaurant.find(params[:id])
+        restaurant.to_json
             
     end
 

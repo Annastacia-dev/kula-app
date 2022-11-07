@@ -1,16 +1,14 @@
-import React, { useContext} from 'react'
+import React, { useState} from 'react'
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
-import { EmailContext, PasswordContext } from '../context/user';
-
 
 const LogIn = () => {
 
-    const [email, setEmail] = useContext(EmailContext);
-    const [password, setPassword] = useContext(PasswordContext);   
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')  
 
     const handleEmailChange = (e) => {
-        fetch ('http://localhost:4000/users', {
+        fetch ('http://localhost:9292/users', {
             method: 'GET'})
             .then(res => res.json())
             .then(data => {
@@ -22,7 +20,7 @@ const LogIn = () => {
     }
 
     const handlePasswordChange = (e) => {
-        fetch ('http://localhost:4000/users', {
+        fetch ('http://localhost:9292/users', {
             method: 'GET'})
             .then(res => res.json())
             .then(data => {
@@ -38,7 +36,7 @@ const LogIn = () => {
         handleEmailChange()
         handlePasswordChange()
         console.log("Log in");
-        window.location.href = '/restaurant';
+        window.location.href = '/restaurants';
     }
 
   return (
@@ -54,14 +52,12 @@ const LogIn = () => {
                           onChange={handleEmailChange}
                          type="text" name="email" 
                          placeholder='Email' />
-                         <p className='error'>Email was not found!</p>
                           <input 
                           onChange={handlePasswordChange}
                           type="password" 
                           name="password"
                           autoComplete='on'
                           placeholder='Password' />
-                          <p className='error'>Password is incorrect!</p>
                           
                 </div>
                 <div className='sign-up button'>

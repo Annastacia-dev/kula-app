@@ -107,11 +107,13 @@
     font-size: 12px;
 }
 
-.error{
-    color: red;
+.errors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-size: 12px;
-    margin-left: 170px;
-    display: none;
+    margin-bottom: -20px;
 }
 
 .white-box{

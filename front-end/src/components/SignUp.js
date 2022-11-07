@@ -1,35 +1,47 @@
-import React,{ useContext } from 'react'
+import React,{ useState } from 'react'
 import '../css/signup.css'
 import { Link } from 'react-router-dom';
 import logo from './logo.png'
-import { NameContext, EmailContext, PasswordContext } from '../context/user';
+
 
 const SignUp = () => {
 
-  const [name, setName] = useContext(NameContext);
-  const [email, setEmail] = useContext(EmailContext);
-  const [password, setPassword] = useContext(PasswordContext);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState([]);
 
   // Post name, email, and password to the server, located at http://localhost:4000/users
   // Then clear the form
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        password_digest: password
+    if (name.length > 0 && email.length > 0 && password.length > 0) {
+      fetch('http://localhost:9292/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name:name, email:email, password_digest:password })
       })
-    })
-    .then(res => res.json())
-      console.log("Sign");
-      window.location.href = '/restaurant';
+        .then(res => res.json())
+        .then(data => {
+          if (data.errors) {
+            setErrors(data.errors);
+          } else {
+            setName('');
+            setEmail('');
+            setPassword('');
+            setErrors([]);
+            window.location.href = '/restaurants';
+          }
+        }
+        )
+    } else {
+      setErrors(['! Please fill out all fields']);
+    }
   }
+
 
   return (
     <>
@@ -45,20 +57,26 @@ const SignUp = () => {
                           type="text" 
                           name="username" 
                           placeholder='Name' />
-                          <p className='error'>Name cannot be empty!</p>
                          <input 
                           onChange={e => setEmail(e.target.value)}
                          type="text" name="email" 
                          placeholder='Email' />
-                         <p className='error'>Email cannot be empty!</p>
                           <input 
                           onChange={e => setPassword(e.target.value)}
                           type="password" 
                           name="password"
                           autoComplete='on'
                           placeholder='Password' />
-                          <p className='error'>Password must be more than 6 characters!</p>
                           
+                </div>
+                <div className='errors'>
+                            {errors.length > 0
+                  ? errors.map((error, index) => (
+                      <p key={index} style={{ color: "red" }}>
+                        {error}
+                      </p>
+                    ))
+                  : null}
                 </div>
                 <div className='sign-up button'>
                     <button
@@ -73,7 +91,6 @@ const SignUp = () => {
                 <br /> and acknowledge Kula's <a href="privacypolicy">Privacy Policy</a> </p> 
                 </div>
           </form>
-        
         </div>
       </div>  
   </div>
