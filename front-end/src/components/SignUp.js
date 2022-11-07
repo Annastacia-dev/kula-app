@@ -11,7 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState([]);
 
-  // Post name, email, and password to the server, located at http://localhost:4000/users
+  // Post name, email, and password to the server, located at http://localhost:9292/users
   // Then clear the form
 
   const handleSubmit = (e) => {

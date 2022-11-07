@@ -1,18 +1,12 @@
 class UserController < Sinatra::Base 
+
     set :default_content_type, 'application/json'
-    
+
+    before do
+        response.headers['Access-Control-Allow-Origin'] = '*'
+    end
+
     # User Routes
-
-    get '/users' do
-        users = User.all
-        users.to_json
-    end
-
-    get '/users/:id' do
-        user = User.find(params[:id])
-        user.to_json
-    end
-
     post '/users' do
         if User.find_by(email: params[:email])
             {message: "Email already exists"}.to_json
@@ -24,6 +18,7 @@ class UserController < Sinatra::Base
             )
             user.to_json
         end
+        
     end
 
     put '/users/:id' do
